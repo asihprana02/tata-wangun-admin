@@ -783,11 +783,11 @@ footer {
 
 footer p {
     margin: 5px 0;
+    font-size: 13px;
 }
 
 footer p:last-child {
     color: #b7e6f7;
-
     font-size: 13px;
 }
 
