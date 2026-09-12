@@ -67,12 +67,40 @@ body {
 
     padding: 75px 15px 25px;
 
-    background-color: #123047;
+    background:
+        linear-gradient(
+            rgba(18, 48, 71, 0.88),
+            rgba(18, 48, 71, 0.88)
+        ),
+        url("BGnavbar.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     color: white;
 
     transform: translateX(-100%);
 
     transition: transform 0.3s ease;
+}
+
+.sidebar.buka {
+    transform: translateX(0);
+}
+
+.sidebar h2 {
+    margin: 0 0 8px;
+
+    font-size: 20px;
+}
+
+.sidebar p {
+    margin: 0 0 30px;
+
+    color: #b7e6f7;
+
+    font-size: 13px;
 }
 
 .sidebar.buka {
