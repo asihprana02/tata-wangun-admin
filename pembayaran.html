@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pembayaran Proyek | Tata Wangun Interior</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script>
+    if (sessionStorage.getItem("loginTataWangun") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <!-- =========================
+         TOMBOL MENU
+         ========================= -->
+
+    <button class="tombol-menu" id="tombol-menu">☰</button>
+
+
+    <!-- =========================
+         SIDEBAR
+         ========================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <h2>Tata Wangun</h2>
+
+        <p>Administrasi Interior</p>
+
+        <nav class="menu-sidebar">
+
+            <a href="index.html">
+                Administrasi Pembayaran
+            </a>
+
+            <a href="pelanggan.html">
+                Data Pelanggan
+            </a>
+
+            <a href="pembayaran.html" class="aktif">
+                Pembayaran Proyek
+            </a>
+
+            <a href="profil.html">
+                Profil Company
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================
+         OVERLAY
+         ========================= -->
+
+    <div class="overlay" id="overlay"></div>
+
+
+    <!-- =========================
+         ISI HALAMAN
+         ========================= -->
+
+    <div class="isi-halaman">
+
+        <header>
+
+            <h1>Pembayaran Proyek</h1>
+
+            <p>Tata Wangun Interior</p>
+
+        </header>
+
+
+        <main>
+
+
+            <!-- =========================
+                 FORM PEMBAYARAN
+                 ========================= -->
+
+            <section class="form-pembayaran">
+
+                <h2>Catat Pembayaran Pelanggan</h2>
+
+
+                <label for="pelanggan-bayar">
+                    Nama Pelanggan
+                </label>
+
+                <select id="pelanggan-bayar">
+
+                    <option value="">
+                        Pilih pelanggan
+                    </option>
+
+                </select>
+
+
+                <label for="nama-proyek-bayar">
+                    Nama Proyek
+                </label>
+
+                <input
+                    type="text"
+                    id="nama-proyek-bayar"
+                    placeholder="Contoh: Pembuatan Kitchen Set"
+                >
+
+
+                <label for="tanggal-bayar">
+                    Tanggal Pembayaran
+                </label>
+
+                <input
+                    type="date"
+                    id="tanggal-bayar"
+                >
+
+
+                <label for="jenis-bayar">
+                    Jenis Pembayaran
+                </label>
+
+                <select id="jenis-bayar">
+
+                    <option value="DP">
+                        DP
+                    </option>
+
+                    <option value="Cicilan">
+                        Cicilan
+                    </option>
+
+                    <option value="Pelunasan">
+                        Pelunasan
+                    </option>
+
+                </select>
+
+
+                <label for="nominal-bayar">
+                    Nominal Pembayaran
+                </label>
+
+                <input
+                    type="number"
+                    id="nominal-bayar"
+                    placeholder="Contoh: 2000000"
+                >
+
+
+                <label for="catatan-bayar">
+                    Catatan
+                </label>
+
+                <textarea
+                    id="catatan-bayar"
+                    placeholder="Contoh: DP pertama melalui transfer"
+                ></textarea>
+
+
+                <button
+                    type="button"
+                    id="simpan-pembayaran"
+                >
+                    Simpan Pembayaran
+                </button>
+
+            </section>
+
+
+
+            <!-- =========================
+                 RIWAYAT PEMBAYARAN
+                 ========================= -->
+
+            <section class="daftar-pembayaran">
+
+                <h2>Riwayat Pembayaran</h2>
+
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>No</th>
+
+                            <th>Tanggal</th>
+
+                            <th>Pelanggan</th>
+
+                            <th>Nama Proyek</th>
+
+                            <th>Jenis</th>
+
+                            <th>Nominal</th>
+
+                            <th>Catatan</th>
+
+                            <th>Aksi</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tabel-pembayaran">
+
+                        <!-- Data pembayaran akan muncul di sini -->
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+
+
+            <!-- =========================
+                 REKAP PEMBAYARAN
+                 ========================= -->
+
+            <section class="rekap-pembayaran">
+
+              <h2>Rekap Pembayaran</h2>
+
+              <div class="pilihan-rekap">
+
+                  <label for="pilih-rekap-pelanggan">
+                      Nama Pelanggan
+                  </label>
+
+                  <select id="pilih-rekap-pelanggan">
+
+                      <option value="">
+                          -- Pilih Nama Pelanggan --
+                      </option>
+
+                  </select>
+
+              </div>
+
+
+              <div class="hasil-rekap">
+
+                  <h3>Riwayat Pembayaran</h3>
+
+                  <table>
+
+                      <thead>
+                          <tr>
+                              <th>No</th>
+                              <th>Tanggal</th>
+                              <th>Proyek</th>
+                              <th>Jenis</th>
+                              <th>Nominal</th>
+                          </tr>
+                      </thead>
+
+                      <tbody id="tabel-rekap-pembayaran">
+                      </tbody>
+
+                  </table>
+
+                  <div class="total-rekap">
+
+                      <span>Total Pembayaran</span>
+
+                      <strong id="total-pembayaran">
+                          Rp0
+                      </strong>
+
+                  </div>
+
+              </div>
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
+    <script src="auth.js"></script>
+    <script src="pembayaran.js"></script>
+    <script src="menu.js"></script>
+
+    <footer>
+        <p>&copy; 2026 Tata Wangun Interior</p>
+        <p>Administrasi Interior. created by Anggas Ankusprana.
+        </p>
+    </footer>
+
+</body>
+
+</html>

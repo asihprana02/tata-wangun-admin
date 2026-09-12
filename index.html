@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Administrasi Pembayaran</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <script>
+    if (sessionStorage.getItem("loginTataWangun") !== "true") {
+        window.location.href = "login.html";
+    }
+  </script>
+
+  <!-- TOMBOL HAMBURGER -->
+  <button class="tombol-menu" id="tombol-menu">
+    ☰
+  </button>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <h2>Tata Wangun</h2>
+    <p>Administrasi Interior</p>
+
+    <nav class="menu-sidebar">
+
+      <a href="index.html" class="aktif">
+        Administrasi Pembayaran
+      </a>
+
+      <a href="pelanggan.html">
+        Data Pelanggan
+      </a>
+
+      <a href="pembayaran.html">
+        Pembayaran Proyek
+      </a>
+
+      <a href="Profil.html">
+        Profil Company
+    </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- LAPISAN GELAP -->
+  <div class="overlay" id="overlay"></div>
+
+
+  <!-- ISI HALAMAN -->
+  <div class="isi-halaman">
+
+    <header>
+
+        <div class="header-company">
+
+          <img src="Logo.png" alt="Logo Tata Wangun Interior">
+
+          <div>
+              <h1>Administrasi Pembayaran</h1>
+              <p>Tata Wangun Interior</p>
+          </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+      <!-- DATA PROYEK -->
+      <section class="data-proyek">
+
+        <h2>Data Proyek</h2>
+
+        <label for="nama-klien">
+          Nama Klien
+        </label>
+
+        <input
+          type="text"
+          id="nama-klien"
+          placeholder="Masukkan nama klien"
+        >
+
+        <label for="nama-proyek">
+          Nama Proyek
+        </label>
+
+        <input
+          type="text"
+          id="nama-proyek"
+          placeholder="Contoh: Renovasi Dapur"
+        >
+
+      </section>
+
+
+      <!-- INFORMASI DOKUMEN -->
+      <section class="info-dokumen">
+
+        <p>
+          <strong>Nama Klien:</strong>
+          <span id="tampil-klien">-</span>
+        </p>
+
+        <p>
+          <strong>Nama Proyek:</strong>
+          <span id="tampil-proyek">-</span>
+        </p>
+
+      </section>
+
+
+      <!-- MATERIAL -->
+      <section class="material">
+
+        <h2>A. Pengadaan Material dan Perlengkapan Kerja</h2>
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Uraian Material</th>
+              <th>Volume</th>
+              <th>Satuan</th>
+              <th>Harga Satuan</th>
+              <th>Margin</th>
+              <th>Harga Proyek</th>
+              <th>Jumlah Total</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td>1</td>
+
+              <td>
+                <input
+                  type="text"
+                  placeholder="Nama material"
+                >
+              </td>
+
+              <td>
+                <input
+                  type="number"
+                  placeholder="0"
+                >
+              </td>
+
+              <td>
+                <input
+                  type="text"
+                  placeholder="pcs / m / unit"
+                >
+              </td>
+
+              <td>
+                <input
+                  type="number"
+                  placeholder="0"
+                >
+              </td>
+
+              <td>Rp0</td>
+
+              <td>Rp0</td>
+
+              <td>Rp0</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="hapus-baris"
+                >
+                  Hapus
+                </button>
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+        <button
+          type="button"
+          id="tambah-material"
+        >
+          + Tambah Material
+        </button>
+
+        <p>
+          <strong>
+            Subtotal Material: Rp0
+          </strong>
+        </p>
+
+      </section>
+
+
+      <!-- JASA -->
+      <section class="jasa">
+
+        <h2>B. Jasa Instalasi dan Operasional</h2>
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Uraian Pekerjaan</th>
+              <th>Volume</th>
+              <th>Satuan</th>
+              <th>Harga Satuan</th>
+              <th>Jumlah Total</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td>1</td>
+
+              <td>
+                <input
+                  type="text"
+                  placeholder="Nama pekerjaan"
+                >
+              </td>
+
+              <td>
+                <input
+                  type="number"
+                  placeholder="0"
+                >
+              </td>
+
+              <td>
+                <input
+                  type="text"
+                  placeholder="hari / orang / unit"
+                >
+              </td>
+
+              <td>
+                <input
+                  type="number"
+                  placeholder="0"
+                >
+              </td>
+
+              <td>Rp0</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="hapus-baris"
+                >
+                  Hapus
+                </button>
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+        <button
+          type="button"
+          id="tambah-jasa"
+        >
+          + Tambah Jasa
+        </button>
+
+        <p>
+          <strong>
+            Subtotal Jasa dan Operasional: Rp0
+          </strong>
+        </p>
+
+      </section>
+
+
+      <!-- REKAP -->
+      <section class="rekap">
+
+        <h2>C. Rekapitulasi Total Penawaran</h2>
+
+        <p>
+          Subtotal Material:
+          <strong>Rp0</strong>
+        </p>
+
+        <p>
+          Subtotal Jasa:
+          <strong>Rp0</strong>
+        </p>
+
+        <p>
+          Total Biaya Pekerjaan:
+          <strong>Rp0</strong>
+        </p>
+
+      </section>
+
+
+      <!-- TANDA TANGAN -->
+      <section class="tanda-tangan">
+
+        <div class="ttd-kolom">
+
+          <p>Mengetahui dan Menyetujui,</p>
+          <p>Klien / Pemilik Rumah</p>
+
+          <div class="ruang-ttd"></div>
+
+          <p id="nama-ttd-klien">
+            (................................)
+          </p>
+
+        </div>
+
+
+        <div class="ttd-kolom">
+          <p>Hormat Kami,</p>
+
+          <div class="ruang-ttd">
+              <img src="ttd.png" alt="Tanda tangan">
+          </div>
+
+          <strong>( Rian Aji N )</strong>
+      </div>
+
+      </section>
+
+
+      <!-- TOMBOL PDF -->
+      <button
+        type="button"
+        id="unduh-pdf"
+      >
+        Unduh PDF
+      </button>
+
+    </main>
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+   
+  <script src="script.js"></script>
+  <script src="menu.js"></script>
+
+  <footer>
+      <p>&copy; 2026 Tata Wangun Interior</p>
+      <p>Administrasi Interior. Created by Anggas Ankusprana.</p>
+  </footer>
+
+</body>
+</html>

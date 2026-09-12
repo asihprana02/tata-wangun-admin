@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profil Company | Tata Wangun Interior</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+    <script>
+    if (sessionStorage.getItem("loginTataWangun") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <!-- =========================
+         TOMBOL MENU
+         ========================= -->
+
+    <button
+        class="tombol-menu"
+        id="tombol-menu"
+    >
+        ☰
+    </button>
+
+
+    <!-- =========================
+         SIDEBAR
+         ========================= -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <h2>Tata Wangun</h2>
+
+        <p>Administrasi Interior</p>
+
+
+        <nav class="menu-sidebar">
+
+            <a href="index.html">
+                Administrasi Pembayaran
+            </a>
+
+            <a href="pelanggan.html">
+                Data Pelanggan
+            </a>
+
+            <a href="pembayaran.html">
+                Pembayaran Proyek
+            </a>
+
+            <a href="profil.html" class="aktif">
+                Profil Company
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================
+         OVERLAY
+         ========================= -->
+
+    <div
+        class="overlay"
+        id="overlay"
+    ></div>
+
+
+    <!-- =========================
+         ISI HALAMAN
+         ========================= -->
+
+    <div class="isi-halaman">
+
+
+        <header>
+
+            <h1>Profil Company</h1>
+
+            <p>Tata Wangun Interior</p>
+
+        </header>
+
+
+        <main>
+
+
+            <!-- =========================
+                 IDENTITAS COMPANY
+                 ========================= -->
+
+            <section class="profil-company">
+
+                <h2>Tata Wangun Interior</h2>
+
+                <p>
+                    Informasi lengkap mengenai
+                    Tata Wangun Interior akan
+                    tersedia pada website company.
+                </p>
+
+            </section>
+
+
+            <!-- =========================
+                 PROJECT BERIKUTNYA
+                 ========================= -->
+
+            <section class="project-berikutnya">
+
+                <h2>Project Berikutnya</h2>
+
+                <div class="kotak-project">
+
+                    <div class="ikon-project">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Website Tata Wangun Interior
+                    </h3>
+
+                    <p>
+                        Kunjungi website utama
+                        untuk melihat informasi
+                        lengkap mengenai company.
+                    </p>
+
+                    <a href="#">
+                        Buka Website
+                    </a>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+        <footer>
+            <p>
+                © 2026 Tata Wangun Interior
+            </p>
+
+            <p>
+                Sistem Administrasi Pembayaran.
+                created by Anggas Ankusprana.
+            </p>
+        </footer>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
+    <script src="menu.js"></script>
+
+
+</body>
+
+</html>

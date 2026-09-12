@@ -1,0 +1,860 @@
+/* ==================================================
+   DASAR
+   ================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f2f2f2;
+
+    color: #222;
+}
+
+
+/* ==================================================
+   MENU HAMBURGER
+   ================================================== */
+
+.tombol-menu {
+    position: fixed;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 1001;
+
+    width: 45px;
+    height: 45px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #123047;
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.tombol-menu:hover {
+    background-color: #007dac;
+}
+
+
+/* ==================================================
+   SIDEBAR
+   ================================================== */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    width: 250px;
+    height: 100vh;
+
+    padding: 75px 15px 25px;
+
+    background-color: #123047;
+    color: white;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.3s ease;
+}
+
+.sidebar.buka {
+    transform: translateX(0);
+}
+
+.sidebar h2 {
+    margin: 0 0 8px;
+
+    font-size: 20px;
+}
+
+.sidebar p {
+    margin: 0 0 30px;
+
+    color: #b7e6f7;
+
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   MENU SIDEBAR
+   ================================================== */
+
+.menu-sidebar {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.menu-sidebar a {
+    padding: 12px;
+
+    border-radius: 5px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.menu-sidebar a:hover,
+.menu-sidebar a.aktif {
+    background-color: #00a8e1;
+}
+
+
+/* ==================================================
+   OVERLAY
+   ================================================== */
+
+.overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 999;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    display: none;
+}
+
+.overlay.tampil {
+    display: block;
+}
+
+
+/* ==================================================
+   LAYOUT
+   ================================================== */
+
+.layout-aplikasi {
+    min-height: 100vh;
+}
+
+.isi-halaman {
+    width: 100%;
+
+    min-width: 0;
+}
+
+
+/* ==================================================
+   HEADER
+   ================================================== */
+
+header {
+    padding: 25px 25px 25px 100px;
+
+    background-color: #123047;
+
+    color: white;
+}
+
+header h1 {
+    margin: 0 0 5px;
+}
+
+header p {
+    margin: 0;
+
+    color: #b7e6f7;
+}
+
+.header-company {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}
+
+.header-company img {
+    width: 350px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* ==================================================
+   MAIN
+   ================================================== */
+
+main {
+    max-width: 1200px;
+
+    margin: 30px auto;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 8px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin: 0 0 15px;
+
+    padding: 10px;
+
+    background-color: #00b0f0;
+
+    font-size: 18px;
+}
+
+
+/* ==================================================
+   FORM
+   ================================================== */
+
+.data-proyek,
+.form-pelanggan,
+.form-pembayaran {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    max-width: 700px;
+
+    padding: 20px;
+
+    border: 1px solid #c7d3dc;
+
+    background-color: #f7fbfd;
+}
+
+.form-pembayaran label {
+    margin-top: 5px;
+
+    font-weight: bold;
+}
+
+.data-proyek input,
+.form-pelanggan input,
+.form-pelanggan textarea,
+.form-pembayaran input,
+.form-pembayaran textarea,
+.form-pembayaran select {
+    width: 100%;
+
+    padding: 10px;
+
+    border: 1px solid #aab7c2;
+
+    border-radius: 4px;
+
+    font: inherit;
+}
+
+.data-proyek input {
+    max-width: 500px;
+}
+
+.form-pelanggan textarea,
+.form-pembayaran textarea {
+    min-height: 80px;
+
+    resize: vertical;
+}
+
+
+/* ==================================================
+   TABEL
+   ================================================== */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+
+    border: 1px solid black;
+
+    text-align: center;
+}
+
+th {
+    background-color: #e7e7e7;
+}
+
+td input {
+    width: 100%;
+
+    padding: 6px;
+
+    border: none;
+
+    background-color: #fff4bf;
+}
+
+
+/* Header tabel */
+
+.material thead th,
+.jasa thead th,
+.daftar-pelanggan thead th,
+.daftar-pembayaran thead th {
+    background-color: #00a8e1;
+
+    color: white;
+}
+
+
+/* Kolom otomatis */
+
+.material td:nth-child(6),
+.material td:nth-child(7),
+.material td:nth-child(8),
+.jasa td:nth-child(6) {
+    background-color: #e4f5fc;
+
+    font-weight: bold;
+}
+
+
+/* ==================================================
+   TOMBOL
+   ================================================== */
+
+button {
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background-color: #00a8e1;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007dac;
+}
+
+.form-pelanggan button,
+.form-pembayaran button {
+    align-self: flex-start;
+
+    margin-top: 8px;
+}
+
+
+/* Tombol hapus */
+
+.hapus-pelanggan,
+.hapus-baris {
+    padding: 7px 11px;
+
+    background-color: #d9534f;
+
+    font-size: 12px;
+}
+
+.hapus-pelanggan:hover,
+.hapus-baris:hover {
+    background-color: #b52f2b;
+}
+
+
+/* Tombol edit */
+
+.edit-pelanggan {
+    margin-right: 5px;
+
+    padding: 7px 11px;
+
+    background-color: #f0ad4e;
+
+    font-size: 12px;
+}
+
+.edit-pelanggan:hover {
+    background-color: #d89027;
+}
+
+
+/* ==================================================
+   REKAP
+   ================================================== */
+
+.rekap,
+.rekap-pembayaran {
+    padding: 15px;
+
+    border: 1px solid black;
+}
+
+.rekap p,
+.rekap-pembayaran p {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* ==================================================
+   INFORMASI DOKUMEN
+   ================================================== */
+
+.info-dokumen {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+
+    padding: 12px;
+
+    border: 1px solid #999;
+
+    background-color: #f7fbfd;
+}
+
+.info-dokumen p {
+    margin: 0;
+}
+
+
+/* ==================================================
+   TANDA TANGAN
+   ================================================== */
+
+.tanda-tangan {
+    display: none;
+
+    justify-content: space-between;
+
+    gap: 80px;
+
+    margin-top: 45px;
+
+    text-align: center;
+}
+
+.ttd-kolom {
+    width: 250px;
+}
+
+.ttd-kolom p {
+    margin: 4px 0;
+}
+
+.ruang-ttd {
+    height: 85px;
+}
+
+.ruang-ttd {
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ruang-ttd img {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ==================================================
+   PILIHAN REKAP PEMBAYARAN
+   ================================================== */
+
+.pilihan-rekap {
+    max-width: 500px;
+
+    margin-bottom: 30px;
+}
+
+.pilihan-rekap label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+.pilihan-rekap select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    background-color: white;
+
+    font-size: 15px;
+}
+
+
+/* ==================================================
+   HASIL REKAP
+   ================================================== */
+
+.hasil-rekap h3 {
+    margin-bottom: 15px;
+}
+
+
+/* ==================================================
+   TOTAL REKAP
+   ================================================== */
+
+.total-rekap {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background-color: #f3f6f8;
+
+    border-radius: 6px;
+}
+
+.total-rekap strong {
+    font-size: 18px;
+}
+
+
+/* ==================================================
+   PROFIL COMPANY
+   ================================================== */
+
+.profil-company {
+    padding: 20px;
+
+    border: 1px solid #c7d3dc;
+
+    background-color: #f7fbfd;
+}
+
+
+/* ==================================================
+   PROJECT BERIKUTNYA
+   ================================================== */
+
+.project-berikutnya {
+    padding: 20px;
+
+    border: 1px solid #c7d3dc;
+
+    background-color: #f7fbfd;
+}
+
+.kotak-project {
+    max-width: 600px;
+
+    padding: 30px;
+
+    border: 1px solid #d5dfe5;
+
+    border-radius: 8px;
+
+    background-color: white;
+
+    text-align: center;
+}
+
+.ikon-project {
+    margin-bottom: 10px;
+
+    font-size: 40px;
+}
+
+.kotak-project h3 {
+    margin: 10px 0;
+}
+
+.kotak-project p {
+    color: #666;
+}
+
+.kotak-project a {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 10px 18px;
+
+    border-radius: 5px;
+
+    background-color: #00a8e1;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.kotak-project a:hover {
+    background-color: #007dac;
+}
+
+
+/* ==================================================
+   MODAL PASSWORD
+   ================================================== */
+
+.modal-password {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 2000;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(6px);
+}
+
+.kotak-password {
+    width: 90%;
+
+    max-width: 400px;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    text-align: center;
+}
+
+.kotak-password h2 {
+    margin-bottom: 10px;
+}
+
+.kotak-password p {
+    margin-bottom: 20px;
+
+    color: #666;
+}
+
+.kotak-password input {
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+}
+
+.kotak-password button {
+    width: 100%;
+
+    padding: 12px;
+
+    border-radius: 6px;
+
+    background-color: #123047;
+
+    font-size: 15px;
+}
+
+.kotak-password button:hover {
+    background-color: #007dac;
+}
+
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+footer {
+    margin-top: 40px;
+
+    padding: 25px;
+
+    background-color: #123047;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer p:last-child {
+    color: #b7e6f7;
+
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   TAMPILAN HP
+   ================================================== */
+
+@media screen and (max-width: 800px) {
+
+    header {
+        padding: 25px 20px;
+    }
+
+    .header-company {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .header-company img {
+        width: 280px;
+        max-width: 100%;
+    }
+
+    .header-company h1 {
+        font-size: 24px;
+    }
+
+}
+
+
+/* ==================================================
+   CETAK / PDF
+   ================================================== */
+
+@media print {
+
+    @page {
+        size: A4 landscape;
+
+        margin: 10mm;
+    }
+
+    body {
+        background-color: white;
+
+        -webkit-print-color-adjust: exact;
+
+        print-color-adjust: exact;
+    }
+
+    .sidebar,
+    .tombol-menu,
+    .overlay,
+    .data-proyek,
+    #tambah-material,
+    #tambah-jasa,
+    #unduh-pdf,
+    .hapus-baris {
+        display: none !important;
+    }
+
+    main {
+        max-width: none;
+
+        margin: 0;
+
+        padding: 0;
+
+        background-color: white;
+    }
+
+    .material th:nth-child(6),
+    .material tbody td:nth-child(6),
+    .material th:last-child,
+    .material tbody td:last-child,
+    .jasa th:last-child,
+    .jasa tbody td:last-child {
+        display: none;
+    }
+
+    .tanda-tangan {
+        display: flex !important;
+    }
+
+    section {
+        break-inside: avoid;
+    }
+
+    table {
+        font-size: 10px;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+
+    .header-company img {
+        width: 350px;
+        height: auto;
+    }
+
+}
+

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Data Pelanggan | Tata Wangun Interior</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <script>
+      if (sessionStorage.getItem("loginTataWangun") !== "true") {
+          window.location.href = "login.html";
+      }
+  </script>
+
+  <button class="tombol-menu" id="tombol-menu">☰</button>
+  <div class="layout-aplikasi">
+
+    <aside class="sidebar" id="sidebar">
+      <h2>Tata Wangun</h2>
+      <p>Administrasi Interior</p>
+
+      <nav class="menu-sidebar">
+        <a href="index.html">
+          Administrasi Pembayaran
+        </a>
+
+        <a href="pelanggan.html" class="aktif">
+          Data Pelanggan
+        </a>
+
+        <a href="pembayaran.html">
+          Pembayaran Proyek
+        </a>
+
+        <a href="profil.html">
+          Profil Company
+        </a>
+      </nav>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="isi-halaman">
+
+      <header>
+        <h1>Data Pelanggan</h1>
+        <p>Tata Wangun Interior</p>
+      </header>
+
+      <main>
+
+        <section class="form-pelanggan">
+          <h2>Tambah Pelanggan Baru</h2>
+
+          <label for="nama-pelanggan">Nama Pelanggan</label>
+          <input
+            type="text"
+            id="nama-pelanggan"
+            placeholder="Contoh: Bapak Ahmad"
+          >
+
+          <label for="nomor-wa">Nomor WhatsApp</label>
+          <input
+            type="tel"
+            id="nomor-wa"
+            placeholder="Contoh: 081234567890"
+          >
+
+          <label for="alamat-pelanggan">Alamat</label>
+          <textarea
+            id="alamat-pelanggan"
+            placeholder="Masukkan alamat pelanggan"
+          ></textarea>
+
+          <label for="catatan-pelanggan">Catatan</label>
+          <textarea
+            id="catatan-pelanggan"
+            placeholder="Contoh: Berminat membuat kitchen set"
+          ></textarea>
+
+          <button type="button" id="tambah-pelanggan">
+            Simpan Pelanggan
+          </button>
+        </section>
+
+        <section class="daftar-pelanggan">
+          <h2>Daftar Pelanggan</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Pelanggan</th>
+                <th>Nomor WhatsApp</th>
+                <th>Alamat</th>
+                <th>Catatan</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+
+            <tbody id="tabel-pelanggan">
+              <!-- Data pelanggan muncul di sini -->
+            </tbody>
+          </table>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="pelanggan.js"></script>
+  <script src="menu.js"></script>
+
+  <footer>
+      <p>&copy; 2026 Tata Wangun Interior</p>
+      <p>Administrasi Interior. Created by Anggas Ankusprana.</p>
+  </footer>
+
+</body>
+</html>
