@@ -665,7 +665,16 @@ button:hover {
     align-items: center;
     justify-content: center;
 
-    background-color: rgba(0, 0, 0, 0.55);
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("BGsandi.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     backdrop-filter: blur(6px);
 }
