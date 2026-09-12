@@ -18,7 +18,7 @@ tombolLogin.addEventListener("click", function () {
     const password =
         inputPassword.value;
 
-    if (password === "admin123") {
+    if (password === "riyan4") {
 
         // Simpan status login
         sessionStorage.setItem(
