@@ -8,12 +8,10 @@
 
 body {
     margin: 0;
-
     font-family: Arial, sans-serif;
-
     background-color: #f2f2f2;
-
     color: #222;
+    overflow-x: hidden;
 }
 
 
@@ -318,6 +316,15 @@ h2 {
 /* ==================================================
    TABEL
    ================================================== */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-wrapper table {
+    min-width: 800px;
+}
 
 table {
     width: 100%;
@@ -799,13 +806,17 @@ footer p:last-child {
 @media screen and (max-width: 800px) {
 
     header {
-        padding: 25px 20px;
+        padding: 5% 20px 25px;
+        text-align: center;
+        font-size: 93%;
+        
     }
 
     .header-company {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+        align-items: center;
+        gap: 0px;
+        text-align:center;
     }
 
     .header-company img {

@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <title>Administrasi Pembayaran</title>
 
@@ -124,76 +124,77 @@
 
         <h2>A. Pengadaan Material dan Perlengkapan Kerja</h2>
 
-        <table>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Uraian Material</th>
+                <th>Volume</th>
+                <th>Satuan</th>
+                <th>Harga Satuan</th>
+                <th>Margin</th>
+                <th>Harga Proyek</th>
+                <th>Jumlah Total</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
 
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Uraian Material</th>
-              <th>Volume</th>
-              <th>Satuan</th>
-              <th>Harga Satuan</th>
-              <th>Margin</th>
-              <th>Harga Proyek</th>
-              <th>Jumlah Total</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
+            <tbody>
 
-          <tbody>
+              <tr>
 
-            <tr>
+                <td>1</td>
 
-              <td>1</td>
+                <td>
+                  <input
+                    type="text"
+                    placeholder="Nama material"
+                  >
+                </td>
 
-              <td>
-                <input
-                  type="text"
-                  placeholder="Nama material"
-                >
-              </td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="0"
+                  >
+                </td>
 
-              <td>
-                <input
-                  type="number"
-                  placeholder="0"
-                >
-              </td>
+                <td>
+                  <input
+                    type="text"
+                    placeholder="pcs / m / unit"
+                  >
+                </td>
 
-              <td>
-                <input
-                  type="text"
-                  placeholder="pcs / m / unit"
-                >
-              </td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="0"
+                  >
+                </td>
 
-              <td>
-                <input
-                  type="number"
-                  placeholder="0"
-                >
-              </td>
+                <td>Rp0</td>
 
-              <td>Rp0</td>
+                <td>Rp0</td>
 
-              <td>Rp0</td>
+                <td>Rp0</td>
 
-              <td>Rp0</td>
+                <td>
+                  <button
+                    type="button"
+                    class="hapus-baris"
+                  >
+                    Hapus
+                  </button>
+                </td>
 
-              <td>
-                <button
-                  type="button"
-                  class="hapus-baris"
-                >
-                  Hapus
-                </button>
-              </td>
+              </tr>
 
-            </tr>
+            </tbody>
 
-          </tbody>
-
-        </table>
+          </table>
+        </div>
 
         <button
           type="button"
@@ -216,70 +217,72 @@
 
         <h2>B. Jasa Instalasi dan Operasional</h2>
 
-        <table>
+        <div class="table-wrapper">
+          <table>
 
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Uraian Pekerjaan</th>
-              <th>Volume</th>
-              <th>Satuan</th>
-              <th>Harga Satuan</th>
-              <th>Jumlah Total</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Uraian Pekerjaan</th>
+                <th>Volume</th>
+                <th>Satuan</th>
+                <th>Harga Satuan</th>
+                <th>Jumlah Total</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
 
-          <tbody>
+            <tbody>
 
-            <tr>
+              <tr>
 
-              <td>1</td>
+                <td>1</td>
 
-              <td>
-                <input
-                  type="text"
-                  placeholder="Nama pekerjaan"
-                >
-              </td>
+                <td>
+                  <input
+                    type="text"
+                    placeholder="Nama pekerjaan"
+                  >
+                </td>
 
-              <td>
-                <input
-                  type="number"
-                  placeholder="0"
-                >
-              </td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="0"
+                  >
+                </td>
 
-              <td>
-                <input
-                  type="text"
-                  placeholder="hari / orang / unit"
-                >
-              </td>
+                <td>
+                  <input
+                    type="text"
+                    placeholder="hari / orang / unit"
+                  >
+                </td>
 
-              <td>
-                <input
-                  type="number"
-                  placeholder="0"
-                >
-              </td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="0"
+                  >
+                </td>
 
-              <td>Rp0</td>
+                <td>Rp0</td>
 
-              <td>
-                <button
-                  type="button"
-                  class="hapus-baris"
-                >
-                  Hapus
-                </button>
-              </td>
+                <td>
+                  <button
+                    type="button"
+                    class="hapus-baris"
+                  >
+                    Hapus
+                  </button>
+                </td>
 
-            </tr>
+              </tr>
 
-          </tbody>
+            </tbody>
 
-        </table>
+          </table>
+        </div>
 
         <button
           type="button"
