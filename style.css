@@ -688,7 +688,7 @@ button:hover {
 
     border-radius: 10px;
 
-    background-color: white;
+    background-color: rgba(20, 35, 45, 0.90);
 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
@@ -701,8 +701,7 @@ button:hover {
 
 .kotak-password p {
     margin-bottom: 20px;
-
-    color: #666;
+    color: #d5dce0;
 }
 
 .kotak-password input {
